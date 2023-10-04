@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/features/bottomNavBar/page/bottomNavBar.dart';
 import 'package:quiz/features/chooseTopic/pages/choose_topic.dart';
+import 'package:quiz/features/selectLevelAndPlay/pages/select_level_and_play.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Quiz',
-      home: ChooseTopic(),
+      home: SelectLevelAndPlay(),
     );
   }
 }
