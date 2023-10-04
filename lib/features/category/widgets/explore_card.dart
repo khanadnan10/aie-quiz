@@ -12,6 +12,8 @@ class ExploreCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
@@ -36,7 +38,9 @@ class ExploreCard extends StatelessWidget {
               image: NetworkImage(
                 image,
               ),
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
+              width: screenSize.width,
+              height: screenSize.height,
             ),
             Positioned(
               left: 0,

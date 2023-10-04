@@ -45,10 +45,12 @@ class _BottomBarState extends State<BottomBar> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              // For new screen copy from here -----------------------
               MaterialButton(
                 minWidth: 40,
                 onPressed: () {
-                  setState(() { // For every new screen pass another listener
+                  setState(() {
+                    // For every new screen pass another listener
                     currentScreen = const Category();
                     currentTab = 0;
                   });
@@ -57,7 +59,8 @@ class _BottomBarState extends State<BottomBar> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.home_outlined,  // For every new screen change the Icon
+                      Icons
+                          .home_outlined, // For every new screen change the Icon
                       color:
                           currentTab == 0 ? AppColor.kblackColor : Colors.grey,
                     ),
@@ -65,6 +68,8 @@ class _BottomBarState extends State<BottomBar> {
                   ],
                 ),
               ),
+              // For new screen copy to here -----------------------
+
               MaterialButton(
                 minWidth: 40,
                 onPressed: () {

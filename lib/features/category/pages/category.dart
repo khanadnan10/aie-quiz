@@ -50,8 +50,36 @@ class _CategoryState extends State<Category> {
                 onTap: () {
                   //TODO: Navigate to profile page
                 },
-                child: const CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/Ellipse2.png'),
+                child: Material(
+                  elevation: 0,
+                  color: Colors.transparent,
+                  shape: CircleBorder(
+                    side: BorderSide(
+                        width: 1, color: Colors.grey.withOpacity(0.2)),
+                  ),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    radius: 60,
+                    child: Material(
+                      elevation: 0,
+                      color: Colors.transparent,
+                      shape: CircleBorder(
+                        side: BorderSide(
+                          width: 1,
+                          color: Colors.grey.withOpacity(0.3),
+                        ),
+                      ),
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 30,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          backgroundImage:
+                              AssetImage('assets/images/Ellipse2.png'),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
