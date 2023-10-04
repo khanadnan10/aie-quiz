@@ -33,7 +33,10 @@ class SearchTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(40.0),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(width: 1, color: Colors.black),
+          borderSide: BorderSide(
+            width: 1,
+            color: borderColor,
+          ),
           borderRadius: BorderRadius.circular(40.0),
         ),
         filled: true,
@@ -53,15 +56,15 @@ class SearchTextField extends StatelessWidget {
           color: prefixIconColor,
         ),
         suffixIcon: activeSuffixIcon == true
-            ? Icon(
+            ? const Icon(
                 Icons.arrow_drop_down_rounded,
                 size: 48,
                 color: Colors.black,
               )
             : null,
         hintText: hintText,
-        hintStyle: TextStyle(
-          color: Colors.black,
+        hintStyle: const TextStyle(
+          color: Colors.black54,
           fontSize: 12.0,
         ),
       ),

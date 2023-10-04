@@ -69,7 +69,9 @@ class _CategoryState extends State<Category> {
               borderColor: Colors.transparent,
               activeSuffixIcon: false,
               prefixIconColor: const Color(0xff707070),
-              onChanged: (value) {},
+              onChanged: (value) {
+                //TODO: Search in category
+              },
             ),
             Utils().bodySizedBox,
             const SectionHeading(
@@ -89,7 +91,7 @@ class _CategoryState extends State<Category> {
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          mainAxisExtent: 120,
+                          mainAxisExtent: 115,
                           mainAxisSpacing: 20,
                           crossAxisSpacing: 20,
                         ),
