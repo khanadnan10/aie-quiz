@@ -1,3 +1,5 @@
+// ignore_for_file: dead_code
+
 import 'package:flutter/material.dart';
 import 'package:quiz/features/chooseTopic/data/topic.dart';
 import 'package:quiz/features/chooseTopic/widgets/choose_topic_subject_card.dart';
@@ -13,15 +15,13 @@ class ChooseTopic extends StatefulWidget {
 
 class _ChooseTopicState extends State<ChooseTopic> {
   int selectedTopicIndex = -1; // Initialize to no topic selected
-  final GlobalKey _animatedContainerKey = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: AppColor.kWhiteColor,
+      backgroundColor: AppColor.kTealColor,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -79,85 +79,76 @@ class _ChooseTopicState extends State<ChooseTopic> {
                       fontSize: 12.0,
                     ),
                   ),
-                  Utils().bodySizedBox,
-                  if (selectedTopicIndex != -1)
-                    AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 1500),
-                      child: selectedTopicIndex != -1
-                          ? AnimatedContainer(
-                              duration: const Duration(milliseconds: 1500),
-                              key: _animatedContainerKey,
-                              height: 200,
-                              width: double.infinity,
-                              padding: const EdgeInsets.all(8.0),
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade200,
-                                borderRadius: BorderRadius.circular(25.0),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                  selectedTopicIndex != -1
+                      ? AnimatedContainer(
+                          duration: const Duration(milliseconds: 1500),
+                          height: 200,
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
                                 children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        padding: const EdgeInsets.all(8.0),
-                                        decoration: BoxDecoration(
-                                          color: AppColor.kWhiteColor,
-                                          borderRadius:
-                                              BorderRadius.circular(50),
-                                          boxShadow: const [
-                                            BoxShadow(
-                                              color: Color.fromARGB(
-                                                  132, 244, 244, 251),
-                                              spreadRadius: 10,
-                                              blurRadius: 10,
-                                              offset: Offset(0, 0),
-                                            ),
-                                          ],
+                                  Container(
+                                    padding: const EdgeInsets.all(8.0),
+                                    decoration: BoxDecoration(
+                                      color: AppColor.kWhiteColor,
+                                      borderRadius: BorderRadius.circular(50),
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          color: Color.fromARGB(
+                                              132, 244, 244, 251),
+                                          spreadRadius: 10,
+                                          blurRadius: 10,
+                                          offset: Offset(0, 0),
                                         ),
-                                        child: Image(
-                                          height: 60,
-                                          fit: BoxFit.cover,
-                                          image: AssetImage(
-                                              topic[selectedTopicIndex]
-                                                  ['image']),
-                                        ),
-                                      ),
-                                      Utils(width: 10, height: 0).bodySizedBox,
-                                      Text(topic[selectedTopicIndex]
-                                          ['subjectName']),
-                                    ],
-                                  ),
-                                  Expanded(
-                                    child: GridView.builder(
-                                      physics: const BouncingScrollPhysics(),
-                                      shrinkWrap: true,
-                                      padding: const EdgeInsets.all(0),
-                                      gridDelegate:
-                                          const SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 3,
-                                      ),
-                                      itemCount: topic[selectedTopicIndex]
-                                              ['subItems']
-                                          .length,
-                                      itemBuilder: (context, index) {
-                                        final subItem =
-                                            topic[selectedTopicIndex]
-                                                ['subItems'][index];
-                                        return ChooseTopicSubjectCard(
-                                          image: subItem['subimage'],
-                                          subjectName: subItem['subjectName'],
-                                        );
-                                      },
+                                      ],
+                                    ),
+                                    child: Image(
+                                      height: 60,
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                          topic[selectedTopicIndex]['image']),
                                     ),
                                   ),
+                                  Utils(width: 10, height: 0).bodySizedBox,
+                                  Text(
+                                      topic[selectedTopicIndex]['subjectName']),
                                 ],
                               ),
-                            )
-                          : const SizedBox(),
-                    ),
+                              Expanded(
+                                child: GridView.builder(
+                                  physics: const BouncingScrollPhysics(),
+                                  shrinkWrap: true,
+                                  padding: const EdgeInsets.all(0),
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 3,
+                                  ),
+                                  itemCount: topic[selectedTopicIndex]
+                                          ['subItems']
+                                      .length,
+                                  itemBuilder: (context, index) {
+                                    final subItem = topic[selectedTopicIndex]
+                                        ['subItems'][index];
+                                    return ChooseTopicSubjectCard(
+                                      image: subItem['subimage'],
+                                      subjectName: subItem['subjectName'],
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      : const SizedBox(),
                   SizedBox(
-                    height: screenSize.height * 0.6,
+                    height: screenSize.height,
                     child: GridView.builder(
                       physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.all(0).copyWith(top: 10),
@@ -188,7 +179,6 @@ class _ChooseTopicState extends State<ChooseTopic> {
                       },
                     ),
                   ),
-                  // Show subItems container if a topic is selected
                 ],
               ),
             )

@@ -5,10 +5,12 @@ import '../../../utils/utils.dart';
 
 class ChooseTopicSubjectCard extends StatelessWidget {
   final String image;
+  final double imageHeight;
   final String subjectName;
   const ChooseTopicSubjectCard({
     Key? key,
     required this.image,
+    this.imageHeight = 60,
     required this.subjectName,
   }) : super(key: key);
 
@@ -33,7 +35,7 @@ class ChooseTopicSubjectCard extends StatelessWidget {
             ],
           ),
           child: Image(
-            height: 60,
+            height: imageHeight,
             image: AssetImage(image),
             fit: BoxFit.cover,
           ),

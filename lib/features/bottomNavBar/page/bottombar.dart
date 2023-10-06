@@ -16,9 +16,9 @@ class _BottomBarState extends State<BottomBar> {
 
   //Add more screens here
   static const List<Widget> _screens = <Widget>[
-    Center(child: Text('Home Page')),
     Category(),
     ChooseTopic(),
+    Center(child: Text('Leaderboard Page')),
   ];
 
   void _onItemTapped(int index) {
