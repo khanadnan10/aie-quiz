@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/features/bottomNavBar/page/bottomNavBar.dart';
+import 'package:quiz/features/bottomNavBar/page/bottombar.dart';
 import 'package:quiz/features/category/pages/category.dart';
 import 'package:quiz/features/chooseTopic/pages/choose_topic.dart';
 import 'package:quiz/features/selectLevelAndPlay/pages/select_level_and_play.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Quiz',
       home: BottomBar(),
