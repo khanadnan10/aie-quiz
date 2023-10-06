@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../utils/color.dart';
@@ -34,7 +33,9 @@ class ChooseTopicSubjectCard extends StatelessWidget {
             ],
           ),
           child: Image(
+            height: 60,
             image: AssetImage(image),
+            fit: BoxFit.cover,
           ),
         ),
         Utils(height: 5).bodySizedBox,

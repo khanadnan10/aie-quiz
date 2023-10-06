@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz/features/bottomNavBar/page/bottomNavBar.dart';
 import 'package:quiz/features/bottomNavBar/page/bottombar.dart';
 import 'package:quiz/features/category/pages/category.dart';
 import 'package:quiz/features/chooseTopic/pages/choose_topic.dart';

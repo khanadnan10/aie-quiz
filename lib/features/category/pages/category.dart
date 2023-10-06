@@ -44,39 +44,36 @@ class _CategoryState extends State<Category> {
             ),
           ),
           actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: GestureDetector(
-                onTap: () {
-                  //TODO: Navigate to profile page
-                },
-                child: Material(
-                  elevation: 0,
-                  color: Colors.transparent,
-                  shape: CircleBorder(
-                    side: BorderSide(
-                        width: 1, color: Colors.grey.withOpacity(0.2)),
-                  ),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 60,
-                    child: Material(
-                      elevation: 0,
-                      color: Colors.transparent,
-                      shape: CircleBorder(
-                        side: BorderSide(
-                          width: 1,
-                          color: Colors.grey.withOpacity(0.3),
-                        ),
+            GestureDetector(
+              onTap: () {
+                //TODO: Navigate to profile page
+              },
+              child: Material(
+                elevation: 0,
+                color: Colors.transparent,
+                shape: CircleBorder(
+                  side:
+                      BorderSide(width: 1, color: Colors.grey.withOpacity(0.2)),
+                ),
+                child: CircleAvatar(
+                  backgroundColor: Colors.transparent,
+                  radius: 60,
+                  child: Material(
+                    elevation: 0,
+                    color: Colors.transparent,
+                    shape: CircleBorder(
+                      side: BorderSide(
+                        width: 1,
+                        color: Colors.grey.withOpacity(0.3),
                       ),
-                      child: const CircleAvatar(
+                    ),
+                    child: const CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 30,
+                      child: CircleAvatar(
                         backgroundColor: Colors.transparent,
-                        radius: 30,
-                        child: CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          backgroundImage:
-                              AssetImage('assets/images/Ellipse2.png'),
-                        ),
+                        backgroundImage:
+                            AssetImage('assets/images/Ellipse2.png'),
                       ),
                     ),
                   ),

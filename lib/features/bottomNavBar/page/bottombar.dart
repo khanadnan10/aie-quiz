@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/features/category/pages/category.dart';
+import 'package:quiz/features/chooseTopic/pages/choose_topic.dart';
 import 'package:quiz/features/waitingforuser/page/waiting_for_friends.dart';
 import 'package:quiz/utils/color.dart';
 
@@ -17,7 +18,7 @@ class _BottomBarState extends State<BottomBar> {
   static const List<Widget> _screens = <Widget>[
     Center(child: Text('Home Page')),
     Category(),
-    Center(child: Text('Leaderboard Page'))
+    ChooseTopic(),
   ];
 
   void _onItemTapped(int index) {
@@ -38,6 +39,7 @@ class _BottomBarState extends State<BottomBar> {
         unselectedItemColor: Colors.black54,
         selectedFontSize: 8,
         showSelectedLabels: true,
+        backgroundColor: AppColor.kWhiteColor,
         selectedItemColor: AppColor.kWhiteColor,
         elevation: 0,
         items: [
